@@ -2,144 +2,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehedi Hasan | Fashion Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Mehedi Hasan | Fashion Designer</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f5f0;
-      color: #252525;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    header {
-      padding: 25px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-    }
+body {
+  background: #f7f5f0;
+  color: #25241f;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
 
-    nav a {
-      margin-left: 18px;
-      color: #252525;
-      text-decoration: none;
-      font-size: 14px;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  border-bottom: 1px solid #dedbd3;
+}
 
-    .hero {
-      padding: 100px 8%;
-      min-height: 420px;
-    }
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      margin-bottom: 15px;
-    }
+nav a {
+  text-decoration: none;
+  color: #25241f;
+  margin-left: 22px;
+  font-size: 13px;
+}
 
-    .hero p {
-      font-size: 18px;
-      line-height: 1.7;
-      max-width: 600px;
-    }
+.hero {
+  min-height: 570px;
+  padding: 120px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    section {
-      padding: 55px 8%;
-    }
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #927b61;
+  text-transform: uppercase;
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
-    }
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 9vw, 100px);
+  line-height: 1.05;
+  font-weight: normal;
+  margin: 25px 0;
+}
 
-    .projects img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-    }
+.hero p {
+  max-width: 570px;
+  color: #68645c;
+  font-size: 16px;
+}
 
-    footer {
-      padding: 30px 8%;
-      background: #252525;
-      color: white;
-    }
-  </style>
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 13px 25px;
+  background: #25241f;
+  color: white;
+  text-decoration: none;
+  width: fit-content;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 85px 8%;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #927b61;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  font-weight: normal;
+  margin: 12px 0 30px;
+}
+
+.about-text {
+  max-width: 760px;
+  color: #68645c;
+  font-size: 16px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px 25px;
+  margin-top: 35px;
+}
+
+.project-card {
+  min-width: 0;
+}
+
+.project-image {
+  aspect-ratio: 4 / 3;
+  background: #e8e2d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #817767;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: normal;
+  margin-top: 15px;
+}
+
+.project-card p {
+  font-size: 13px;
+  color: #777168;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.skills span {
+  border: 1px solid #c9c2b6;
+  padding: 10px 17px;
+  font-size: 12px;
+}
+
+.experience {
+  border-left: 2px solid #927b61;
+  padding-left: 22px;
+  margin-top: 25px;
+}
+
+.experience p {
+  color: #68645c;
+  margin-top: 10px;
+}
+
+.contact {
+  background: #25241f;
+  color: #f7f5f0;
+}
+
+.contact p {
+  color: #d1cdc5;
+  margin: 12px 0;
+}
+
+.contact a {
+  color: #e4c9a5;
+  text-decoration: none;
+}
+
+footer {
+  padding: 25px 8%;
+  background: #25241f;
+  color: #aaa69d;
+  border-top: 1px solid #48463f;
+  font-size: 12px;
+}
+
+@media(max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 7px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 440px;
+    padding: 80px 7%;
+  }
+
+  section {
+    padding: 60px 7%;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <strong>MEHEDI HASAN</strong>
+  <div class="logo">MEHEDI HASAN.</div>
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#contact">CONTACT</a>
   </nav>
 </header>
 
+<main>
+
 <div class="hero">
-  <p>FASHION DESIGN & TECHNOLOGY</p>
-  <h1>Creative Ideas.<br>Future Fashion.</h1>
+  <span class="eyebrow">Fashion Design · Research · Innovation</span>
+
+  <h1>Designing<br>Tomorrow's<br>Fashion.</h1>
+
   <p>
-    Exploring fashion design, product development,
-    trend research and sustainable fashion.
+    I am Mehedi Hasan, a Fashion Design and Technology
+    graduate exploring creative design, fashion buying,
+    product development and sustainable fashion.
   </p>
+
+  <a href="#projects" class="btn">EXPLORE MY WORK →</a>
 </div>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a Fashion Design and Technology graduate
-    from Shanto-Mariam University of Creative Technology.
-    My interests include fashion buying, product development,
-    trend forecasting and sustainable fashion.
+  <span class="section-label">01 / About Me</span>
+  <h2>My Creative Journey</h2>
+
+  <p class="about-text">
+    I am a Fashion Design and Technology graduate from
+    Shanto-Mariam University of Creative Technology,
+    Bangladesh, with a CGPA of 3.39/4.00.
+    My academic and practical experience has developed
+    my interests in fashion design, apparel product
+    development, trend research and garment technology.
+    I aim to develop my knowledge of fashion buying,
+    management and sustainable product development.
   </p>
 </section>
 
 <section id="projects">
-  <h2>Selected Projects</h2>
+  <span class="section-label">02 / Selected Work</span>
+  <h2>Fashion Projects</h2>
 
   <div class="projects">
-    <div>
-      <img src="images/project1.jpg" alt="Fashion collection">
-      <h3>Fashion Collection</h3>
-      <p>Concept development and fashion illustration.</p>
+
+    <div class="project-card">
+      <div class="project-image">Project Image 01</div>
+      <h3>Bold Elegance</h3>
+      <p>SS26/27 · Womenswear Collection</p>
     </div>
 
-    <div>
-      <img src="images/project2.jpg" alt="CLO 3D design">
-      <h3>CLO 3D Development</h3>
-      <p>Digital garment visualization.</p>
+    <div class="project-card">
+      <div class="project-image">Project Image 02</div>
+      <h3>Sagrada Familia</h3>
+      <p>Fashion Design · Creative Development</p>
     </div>
 
-    <div>
-      <img src="images/project3.jpg" alt="Fashion research">
-      <h3>Trend Research</h3>
-      <p>Fashion forecasting and research.</p>
+    <div class="project-card">
+      <div class="project-image">Project Image 03</div>
+      <h3>Gentle Authority</h3>
+      <p>SS26/27 · Menswear Resort Collection</p>
     </div>
+
+    <div class="project-card">
+      <div class="project-image">Project Image 04</div>
+      <h3>Digital Fashion</h3>
+      <p>CLO 3D · Garment Visualization</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">Project Image 05</div>
+      <h3>Fashion Research</h3>
+      <p>Trend Forecasting · SS27</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">Project Image 06</div>
+      <h3>Threads of Divinity</h3>
+      <p>Fashion Concept · Graduation Project</p>
+    </div>
+
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: mehedi11118@gmail.com</p>
+<section id="skills">
+  <span class="section-label">03 / Expertise</span>
+  <h2>Skills & Tools</h2>
+
+  <div class="skills">
+    <span>Adobe Illustrator</span>
+    <span>Adobe Photoshop</span>
+    <span>CLO 3D</span>
+    <span>Fashion Illustration</span>
+    <span>Trend Research</span>
+    <span>Tech Pack</span>
+    <span>Product Development</span>
+    <span>Fashion Forecasting</span>
+    <span>Microsoft Excel</span>
+  </div>
+</section>
+
+<section>
+  <span class="section-label">04 / Experience</span>
+  <h2>Industry Experience</h2>
+
+  <div class="experience">
+    <h3>Fashion Design Intern</h3>
+    <p>Florence Group · Bangladesh</p>
+    <p>
+      Supported fashion design, apparel product development,
+      trend research, technical specifications and
+      garment development activities.
+    </p>
+  </div>
+
+  <div class="experience">
+    <h3>Education</h3>
+    <p>BA (Hons) Fashion Design & Technology</p>
+    <p>Shanto-Mariam University of Creative Technology</p>
+    <p>CGPA: 3.39 / 4.00 · 2022–2026</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="section-label">05 / Get in Touch</span>
+  <h2>Let's Connect.</h2>
+
+  <p>Have a project or professional opportunity?</p>
+
+  <p>
+    Email:
+    <a href="mailto:mehedi11118@gmail.com">
+      mehedi11118@gmail.com
+    </a>
+  </p>
+
   <p>
     LinkedIn:
-    <a href="https://www.linkedin.com/in/mehedi-hasan-0aa9b0246/">
-      Visit my LinkedIn
+    <a href="https://www.linkedin.com/in/mehedi-hasan-0aa9b0246/"
+       target="_blank">
+      Connect with Me
     </a>
   </p>
 </section>
 
+</main>
+
 <footer>
-  © 2026 Mehedi Hasan | Fashion Portfolio
+  © 2026 Mehedi Hasan · Fashion Design & Technology
 </footer>
 
 </body>
