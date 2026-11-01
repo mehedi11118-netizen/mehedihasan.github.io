@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehedi Hasan | Fashion Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f5f0;
+      color: #252525;
+    }
+
+    header {
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      margin-left: 18px;
+      color: #252525;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 100px 8%;
+      min-height: 420px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    section {
+      padding: 55px 8%;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .projects img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    footer {
+      padding: 30px 8%;
+      background: #252525;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <strong>MEHEDI HASAN</strong>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <p>FASHION DESIGN & TECHNOLOGY</p>
+  <h1>Creative Ideas.<br>Future Fashion.</h1>
+  <p>
+    Exploring fashion design, product development,
+    trend research and sustainable fashion.
+  </p>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Fashion Design and Technology graduate
+    from Shanto-Mariam University of Creative Technology.
+    My interests include fashion buying, product development,
+    trend forecasting and sustainable fashion.
+  </p>
+</section>
+
+<section id="projects">
+  <h2>Selected Projects</h2>
+
+  <div class="projects">
+    <div>
+      <img src="images/project1.jpg" alt="Fashion collection">
+      <h3>Fashion Collection</h3>
+      <p>Concept development and fashion illustration.</p>
+    </div>
+
+    <div>
+      <img src="images/project2.jpg" alt="CLO 3D design">
+      <h3>CLO 3D Development</h3>
+      <p>Digital garment visualization.</p>
+    </div>
+
+    <div>
+      <img src="images/project3.jpg" alt="Fashion research">
+      <h3>Trend Research</h3>
+      <p>Fashion forecasting and research.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: mehedi11118@gmail.com</p>
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/mehedi-hasan-0aa9b0246/">
+      Visit my LinkedIn
+    </a>
+  </p>
+</section>
+
+<footer>
+  © 2026 Mehedi Hasan | Fashion Portfolio
+</footer>
+
+</body>
+</html>
