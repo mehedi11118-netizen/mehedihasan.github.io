@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +22,15 @@ body {
   line-height: 1.6;
 }
 
+/* HEADER */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 8%;
   border-bottom: 1px solid #dedbd3;
+  background: #f7f5f0;
 }
 
 .logo {
@@ -46,55 +50,126 @@ nav a:hover {
   color: #927b61;
 }
 
-.hero {
-  min-height: 570px;
-  padding: 120px 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* FASHION MAGAZINE HERO SLIDER */
+
+.welcome-slider {
+  position: relative;
+  height: 88vh;
+  min-height: 520px;
+  overflow: hidden;
+  background: #25241f;
 }
 
-.eyebrow,
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.4)
+  );
+}
+
+.welcome-overlay {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 25px;
+  transition: opacity 1.2s ease;
+}
+
+.welcome-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.welcome-overlay .eyebrow {
+  color: white;
+  letter-spacing: 5px;
+  font-size: 11px;
+}
+
+.welcome-overlay h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 9vw, 105px);
+  font-weight: normal;
+  letter-spacing: 3px;
+  margin: 18px 0;
+}
+
+.welcome-overlay h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(18px, 3vw, 30px);
+  font-weight: normal;
+  font-style: italic;
+  margin: 0 0 18px;
+}
+
+.welcome-overlay p:last-child {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.slider-controls {
+  position: absolute;
+  z-index: 4;
+  bottom: 28px;
+  right: 7%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: white;
+  font-size: 12px;
+}
+
+.slider-controls button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.slider-controls button:hover {
+  background: white;
+  color: #25241f;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 85px 8%;
+}
+
 .section-label {
   font-size: 11px;
   letter-spacing: 4px;
   color: #927b61;
   text-transform: uppercase;
-}
-
-.hero h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(48px, 9vw, 100px);
-  line-height: 1.05;
-  font-weight: normal;
-  margin: 25px 0;
-}
-
-.hero p {
-  max-width: 570px;
-  color: #68645c;
-  font-size: 16px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 13px 25px;
-  background: #25241f;
-  color: white;
-  text-decoration: none;
-  width: fit-content;
-  font-size: 12px;
-  letter-spacing: 1px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #927b61;
-}
-
-section {
-  padding: 85px 8%;
 }
 
 h2 {
@@ -104,11 +179,15 @@ h2 {
   margin: 12px 0 30px;
 }
 
+/* ABOUT */
+
 .about-text {
   max-width: 760px;
   color: #68645c;
   font-size: 16px;
 }
+
+/* PROJECTS */
 
 .projects {
   display: grid;
@@ -135,7 +214,14 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.5s;
+}
+
+.project-image a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .project-card:hover .project-image img {
@@ -162,6 +248,8 @@ h2 {
   letter-spacing: 2px;
 }
 
+/* SKILLS */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -175,6 +263,8 @@ h2 {
   font-size: 12px;
 }
 
+/* EXPERIENCE */
+
 .experience {
   border-left: 2px solid #927b61;
   padding-left: 22px;
@@ -185,6 +275,8 @@ h2 {
   color: #68645c;
   margin-top: 10px;
 }
+
+/* CONTACT AND FOOTER */
 
 .contact,
 footer {
@@ -209,6 +301,8 @@ footer {
   font-size: 12px;
 }
 
+/* MOBILE RESPONSIVE */
+
 @media(max-width: 650px) {
   header {
     flex-direction: column;
@@ -220,9 +314,18 @@ footer {
     font-size: 11px;
   }
 
-  .hero {
-    min-height: 440px;
-    padding: 80px 7%;
+  .welcome-slider {
+    height: 75vh;
+    min-height: 450px;
+  }
+
+  .welcome-overlay h1 {
+    letter-spacing: 2px;
+  }
+
+  .slider-controls {
+    right: 5%;
+    bottom: 18px;
   }
 
   section {
@@ -242,10 +345,13 @@ footer {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
   <div class="logo">MEHEDI HASAN.</div>
 
   <nav>
+    <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#projects">PROJECTS</a>
     <a href="#skills">SKILLS</a>
@@ -255,21 +361,42 @@ footer {
 
 <main>
 
-<div class="hero">
-  <span class="eyebrow">
-    Fashion Design · Research · Innovation
-  </span>
+<!-- HOME: FASHION IMAGE SLIDER -->
 
-  <h1>Designing<br>Tomorrow's<br>Fashion.</h1>
+<section class="welcome-slider" id="home">
 
-  <p>
-    I am Mehedi Hasan, a Fashion Design and Technology
-    graduate exploring creative design, fashion buying,
-    product development and sustainable fashion.
-  </p>
+  <div class="hero-slide active">
+    <img src="images/mehedi-portrait.jpg" alt="Mehedi Hasan">
+  </div>
 
-  <a href="#projects" class="btn">EXPLORE MY WORK →</a>
-</div>
+  <div class="hero-slide">
+    <img src="images/bold-elegance-moodboard.jpg" alt="Bold Elegance">
+  </div>
+
+  <div class="hero-slide">
+    <img src="images/01.JPG" alt="Fashion Collection">
+  </div>
+
+  <div class="hero-slide">
+    <img src="images/05.JPG" alt="Fashion Design Research">
+  </div>
+
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <p class="eyebrow">MEHEDI HASAN PRESENTS</p>
+    <h1>WELCOME</h1>
+    <h2>To the World of Fashion & Creativity</h2>
+    <p>DESIGN · RESEARCH · INNOVATION</p>
+  </div>
+
+  <div class="slider-controls">
+    <button type="button" onclick="changeSlide(-1)">PREV</button>
+    <span id="slideNumber">01 / 04</span>
+    <button type="button" onclick="changeSlide(1)">NEXT</button>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
 
 <section id="about">
   <span class="section-label">01 / About Me</span>
@@ -287,22 +414,26 @@ footer {
   </p>
 </section>
 
+<!-- PROJECTS -->
+
 <section id="projects">
   <span class="section-label">02 / Selected Work</span>
   <h2>Fashion Projects</h2>
-<div class="projects">
-<div class="project-card">
-  <div class="project-image">
-    <a href="bold-elegance.html">
-      <img
-        src="images/bold-elegance-moodboard.jpg"
-        alt="Bold Elegance fashion mood board">
-    </a>
-  </div>
 
-  <h3>Bold Elegance</h3>
-  <p>SS26/27 · Fashion Collection · Trend Research</p>
-</div>
+  <div class="projects">
+
+    <div class="project-card">
+      <div class="project-image">
+        <a href="bold-elegance.html">
+          <img
+            src="images/bold-elegance-moodboard.jpg"
+            alt="Bold Elegance fashion mood board">
+        </a>
+      </div>
+
+      <h3>Bold Elegance</h3>
+      <p>SS26/27 · Fashion Collection · Trend Research</p>
+    </div>
 
     <div class="project-card">
       <div class="project-image coming-soon">
@@ -331,6 +462,8 @@ footer {
   </div>
 </section>
 
+<!-- SKILLS -->
+
 <section id="skills">
   <span class="section-label">03 / Expertise</span>
   <h2>Skills & Tools</h2>
@@ -347,6 +480,8 @@ footer {
     <span>Microsoft Excel</span>
   </div>
 </section>
+
+<!-- EXPERIENCE AND EDUCATION -->
 
 <section>
   <span class="section-label">04 / Experience</span>
@@ -369,6 +504,8 @@ footer {
     <p>CGPA: 3.39 / 4.00 · 2022–2026</p>
   </div>
 </section>
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
   <span class="section-label">05 / Get in Touch</span>
@@ -399,6 +536,41 @@ footer {
 <footer>
   © 2026 Mehedi Hasan · Fashion Design & Technology
 </footer>
+
+<!-- SLIDER JAVASCRIPT -->
+
+<script>
+const slides = document.querySelectorAll(".hero-slide");
+const slideNumber = document.getElementById("slideNumber");
+const welcomeOverlay = document.getElementById("welcomeOverlay");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides[currentSlide].classList.remove("active");
+
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides[currentSlide].classList.add("active");
+
+  slideNumber.textContent =
+    String(currentSlide + 1).padStart(2, "0") +
+    " / " +
+    String(slides.length).padStart(2, "0");
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+setTimeout(() => {
+  welcomeOverlay.classList.add("hide");
+}, 5000);
+
+setInterval(() => {
+  showSlide(currentSlide + 1);
+}, 6000);
+</script>
 
 </body>
 </html>
