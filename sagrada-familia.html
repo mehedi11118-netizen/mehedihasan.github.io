@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sagrada Familia | Mehedi Hasan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --paper: #f6f3ed;
+    --ink: #292722;
+    --muted: #777168;
+    --accent: #8b6d52;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+}
+
+header {
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ded9d0;
+}
+
+.logo {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13px;
+}
+
+.hero {
+    padding: 95px 7% 65px;
+    max-width: 1100px;
+}
+
+.category {
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.description {
+    max-width: 650px;
+    color: #625e57;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.project-info {
+    display: flex;
+    gap: 65px;
+    padding: 30px 7%;
+    border-top: 1px solid #ded9d0;
+    border-bottom: 1px solid #ded9d0;
+    flex-wrap: wrap;
+}
+
+.info-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 13px;
+}
+
+.gallery-section {
+    padding: 65px 7% 90px;
+}
+
+.gallery-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.gallery-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.gallery-heading span {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    grid-column: span 4;
+    overflow: hidden;
+    background: #e9e4dc;
+}
+
+.gallery-item:nth-child(6n + 1),
+.gallery-item:nth-child(6n + 4) {
+    grid-column: span 8;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.035);
+}
+
+footer {
+    padding: 30px 7%;
+    border-top: 1px solid #ded9d0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+@media(max-width: 650px) {
+    header {
+        padding: 22px 5%;
+    }
+
+    .hero {
+        padding: 65px 5% 45px;
+    }
+
+    .project-info,
+    .gallery-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .project-info {
+        gap: 25px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .gallery-item,
+    .gallery-item:nth-child(6n + 1),
+    .gallery-item:nth-child(6n + 4) {
+        grid-column: span 1;
+    }
+
+    .gallery-item img {
+        min-height: 220px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MEHEDI HASAN</div>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+</header>
+
+<section class="hero">
+    <div class="category">Architecture · Fashion Inspiration · Design Exploration</div>
+
+    <h1>Sagrada Familia</h1>
+
+    <p class="subtitle">Architecture Translated into Fashion</p>
+
+    <p class="description">
+        Inspired by the extraordinary architectural language of Sagrada Familia,
+        this project explores the relationship between architecture, form,
+        structure and fashion design. Through visual research and creative
+        exploration, architectural details are interpreted as a source of
+        inspiration for contemporary fashion expression.
+    </p>
+</section>
+
+<section class="project-info">
+    <div>
+        <p class="info-label">Project</p>
+        <p class="info-value">Fashion Design Exploration</p>
+    </div>
+
+    <div>
+        <p class="info-label">Inspiration</p>
+        <p class="info-value">Sagrada Familia Architecture</p>
+    </div>
+
+    <div>
+        <p class="info-label">Discipline</p>
+        <p class="info-value">Fashion Design & Research</p>
+    </div>
+
+    <div>
+        <p class="info-label">Designer</p>
+        <p class="info-value">Mehedi Hasan</p>
+    </div>
+</section>
+
+<section class="gallery-section">
+    <div class="gallery-heading">
+        <h2>Project Gallery</h2>
+        <span>01 — 24 / VISUAL RESEARCH</span>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item"><img src="images/sagrada-familia/01.jpg" alt="Sagrada Familia project image 01" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/02.jpg" alt="Sagrada Familia project image 02" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/03.jpg" alt="Sagrada Familia project image 03" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/04.jpg" alt="Sagrada Familia project image 04" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/05.jpg" alt="Sagrada Familia project image 05" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/06.jpg" alt="Sagrada Familia project image 06" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/07.jpg" alt="Sagrada Familia project image 07" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/08.jpg" alt="Sagrada Familia project image 08" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/09.jpg" alt="Sagrada Familia project image 09" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/10.jpg" alt="Sagrada Familia project image 10" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/11.jpg" alt="Sagrada Familia project image 11" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/12.jpg" alt="Sagrada Familia project image 12" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/13.jpg" alt="Sagrada Familia project image 13" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/14.jpg" alt="Sagrada Familia project image 14" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/15.jpg" alt="Sagrada Familia project image 15" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/16.jpg" alt="Sagrada Familia project image 16" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/17.jpg" alt="Sagrada Familia project image 17" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/18.jpg" alt="Sagrada Familia project image 18" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/19.jpg" alt="Sagrada Familia project image 19" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/20.jpg" alt="Sagrada Familia project image 20" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/21.jpg" alt="Sagrada Familia project image 21" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/22.jpg" alt="Sagrada Familia project image 22" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/23.jpg" alt="Sagrada Familia project image 23" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/sagrada-familia/24.jpg" alt="Sagrada Familia project image 24" loading="lazy"></div>
+    </div>
+</section>
+
+<footer>
+    <span>© 2026 MEHEDI HASAN · FASHION DESIGN PORTFOLIO</span>
+    <a href="index.html" class="back-link">Back to Home ↑</a>
+</footer>
+
+</body>
+</html>
