@@ -15,7 +15,11 @@
   --soft: #e9e4d9;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background: var(--paper);
@@ -24,8 +28,15 @@ body {
   line-height: 1.7;
 }
 
-img { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .topbar {
   padding: 24px 7%;
@@ -130,50 +141,9 @@ h2 {
   font-size: 11px;
 }
 
-.fact span:first-child { color: #827b70; }
-
-/* EDITORIAL GALLERY */
-
-.gallery-intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  margin-bottom: 45px;
-  gap: 20px;
+.fact span:first-child {
+  color: #827b70;
 }
-
-.gallery-intro p {
-  font-size: 11px;
-  color: #81796e;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 34px 22px;
-  align-items: start;
-}
-
-.gallery-card {
-  min-width: 0;
-  background: var(--soft);
-  padding: 9px;
-}
-
-.gallery-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: var(--paper);
-}
-
-.gallery-card .caption {
-  padding: 10px 3px 2px;
-  font-size: 10px;
-  letter-spacing: 1px;
-  color: #82796d;
-}
-
 
 /* EDITORIAL GALLERY */
 
@@ -188,7 +158,7 @@ h2 {
 .gallery-intro p {
   font-size: 11px;
   color: #81796e;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   line-height: 1.7;
 }
 
@@ -234,34 +204,7 @@ h2 {
   margin-top: 35px;
 }
 
-.gallery-card:nth-child(5n + 4) {
-  margin-top: 0;
-}
-
-/* Mobile responsive */
-
-@media (max-width: 700px) {
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .gallery-card,
-  .gallery-card:nth-child(n) {
-    grid-column: 1;
-    width: 100%;
-    margin-top: 0;
-  }
-
-  .gallery-intro {
-    display: block;
-  }
-
-  .gallery-intro p {
-    margin-top: 12px;
-  }
-}
-
+/* CLOSING */
 
 .closing {
   text-align: center;
@@ -284,27 +227,86 @@ h2 {
   color: #82796d;
 }
 
-@media(max-width: 700px) {
-  .container { width: 88%; }
+/* IMAGE LIGHTBOX */
 
-  .topbar { padding: 20px 6%; }
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(20, 19, 17, .94);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  cursor: zoom-out;
+}
 
-  .hero { padding: 60px 0 45px; }
+.lightbox.active {
+  display: flex;
+}
 
-  .hero-title { letter-spacing: -2px; }
+.lightbox img {
+  max-width: 92%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
 
-  .intro-grid { grid-template-columns: 1fr; gap: 35px; }
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 36px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 2;
+}
 
-  .section { padding: 60px 0; }
+.hero-image img,
+.gallery-card img {
+  cursor: zoom-in;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+  .container {
+    width: 88%;
+  }
+
+  .topbar {
+    padding: 20px 6%;
+  }
+
+  .hero {
+    padding: 60px 0 45px;
+  }
+
+  .hero-title {
+    letter-spacing: -2px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
 
   .gallery {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 24px;
   }
 
   .gallery-card,
   .gallery-card:nth-child(n) {
     grid-column: 1;
+    width: 100%;
     margin-top: 0;
   }
 
@@ -312,10 +314,26 @@ h2 {
     display: block;
   }
 
-  .gallery-intro p { margin-top: 12px; }
+  .gallery-intro p {
+    margin-top: 12px;
+  }
 
   .footer {
     flex-direction: column;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 85vh;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 18px;
   }
 }
 </style>
@@ -446,6 +464,48 @@ h2 {
   <span>FASHION DESIGN & TECHNOLOGY — 2026</span>
   <a href="index.html">BACK TO HOMEPAGE ↑</a>
 </footer>
+
+<!-- IMAGE PREVIEW WINDOW -->
+
+<div class="lightbox" id="imageLightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImage" src="" alt="Enlarged project image">
+</div>
+
+<script>
+const lightbox = document.getElementById("imageLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeButton = document.getElementById("lightboxClose");
+
+document.querySelectorAll(".hero-image img, .gallery-card img").forEach(img => {
+  img.addEventListener("click", function () {
+    lightboxImage.src = this.src;
+    lightboxImage.alt = this.alt;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+}
+
+closeButton.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", function(event) {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+});
+</script>
 
 </body>
 </html>
